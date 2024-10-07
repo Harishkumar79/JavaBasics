@@ -1,7 +1,7 @@
 import java.util.*;
 
  //Items bill with +18% GST.
-public class costcalulator{
+public class costcalculator{
     public static void main(String args[]){
         try(Scanner sc = new Scanner(System.in)){
             System.out.println("Enter the cost of items :");
