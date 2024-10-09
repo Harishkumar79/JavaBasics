@@ -12,7 +12,6 @@ public class break_continue{
                     break;
                 }else if(n%5 == 0){
                     System.out.println("number is multiple of 5");
-                    continue;
                 }else{
                     System.out.println("your number"+n);
                 }
