@@ -1,5 +1,3 @@
-
-
 public class largestNumber {
 
     public static int linear_search(int numbers[]) {
