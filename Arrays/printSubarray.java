@@ -1,5 +1,7 @@
-
 public class printSubarray {
+
+
+//method -1 normal
 
     public static void printSubarray(int numbers[]) {
         int ts = 0;
@@ -17,26 +19,23 @@ public class printSubarray {
                 System.out.println();
                 System.out.println("sum of subarray is : " + sum);
 
-                //****** 
-                if(sum > 0) {
-                    
-                    if (largest < sum) {
-                        largest = sum;
-                    }
-                    if (smallest > sum) {
-                        smallest = sum;
-                    }
+                //compaire sum with largest and smallest value
+                if (largest < sum) {
+                    largest = sum;  //  sum will be largest if true
+                }
+                if (smallest > sum) {
+                    smallest = sum; // sum will be smallest if true
                 }
             }
             System.out.println();
         }
-        System.out.println("Total subarray : " + ts);       
+        System.out.println("Total subarray : " + ts);
         System.out.println("Largest sum of a subarray : " + largest);
         System.out.println("Smallest sum of a subarray : " + smallest);
     }
 
     public static void main(String args[]) {
-        int numbers[] = {1,2,3};
+        int numbers[] = {1, -2, 3 , -4};
         System.out.println("given array :");
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i] + " ");
@@ -47,3 +46,36 @@ public class printSubarray {
         printSubarray(numbers);
     }
 }
+
+// ***********output************
+
+// given array :
+// 1 -2 3 -4 
+// Subarray of given array :
+// 1 
+// sum of subarray is : 1
+// 1 -2
+// sum of subarray is : -1
+// 1 -2 3
+// sum of subarray is : 2
+// 1 -2 3 -4
+// sum of subarray is : -2
+
+// -2
+// sum of subarray is : -2
+// -2 3
+// sum of subarray is : 1
+// -2 3 -4
+// sum of subarray is : -3
+
+// 3
+// sum of subarray is : 3
+// 3 -4
+// sum of subarray is : -1
+
+// -4
+// sum of subarray is : -4
+
+// Total subarray : 10
+// Largest sum of a subarray : 3
+// Smallest sum of a subarray : -4
