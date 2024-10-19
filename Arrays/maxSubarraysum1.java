@@ -4,17 +4,18 @@ public class maxSubarraysum1 {
 
     public static void kadanes(int numbers[]){
         int largest = Integer.MIN_VALUE; // -infinity
+        int smallest = Integer.MAX_VALUE; // +infinity
+
         int curr = 0;
         for (int i = 0; i < numbers.length; i++) {
             curr = curr + numbers[i];
 
-            if(curr < 0){
-                curr = 0;
-            }
-
             largest = Math.max(curr, largest);
+            smallest = Math.min(curr, smallest);
         }
         System.out.println("Largest sum of a subarray : " + largest);
+        System.out.println("smallest sum of a subarray : " + smallest);
+
     }
 
     public static void main(String args[]) {

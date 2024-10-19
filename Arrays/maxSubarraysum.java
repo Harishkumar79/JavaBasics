@@ -4,6 +4,7 @@ public class maxSubarraysum {
 
     public static void maxSubarraysum(int numbers[]){
         int largest = Integer.MIN_VALUE; // -infinity
+        int smallest = Integer.MAX_VALUE; // +infinity 
         int prefix[] = new int[numbers.length];
 
         prefix[0] = numbers[0];
@@ -15,13 +16,17 @@ public class maxSubarraysum {
         for (int start = 0; start < numbers.length; start++) {
             for (int end = start; end < numbers.length; end++) {
                 int sum = start == 0 ? prefix[end] : prefix[end] - prefix[start-1];
-                //compair sum with largest
+                //compair 
                 if (largest < sum) {
                     largest = sum;
+                }
+                if (smallest > sum) {
+                    smallest = sum;
                 }
             }
         }
         System.out.println("Largest sum of a subarray : " + largest);
+        System.out.println("smallest sum of a subarray : " + smallest);
     }
 
     public static void main(String args[]) {
